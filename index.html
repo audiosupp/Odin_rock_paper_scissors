@@ -8,31 +8,36 @@
   </head>
   <body>
     <script>
-      let playerChoice = prompt("Choose your fighter").toLowerCase();
-      let options = ["rock", "paper", "scissors"];
-      let computerPlay = options[Math.floor(Math.random() * options.length)];
+      function game() {
+        for (let i = 0; i < 5; i++) {
+          playerChoice = prompt("Choose your fighter").toLowerCase();
+          options = ["rock", "paper", "scissors"];
+          computerPlay = options[Math.floor(Math.random() * options.length)];
 
-      function playRound(playerSelection, computerSelection) {
-        if (playerChoice == computerPlay) return "tie";
+          function playRound(playerSelection, computerSelection) {
+            if (playerChoice == computerPlay) return "tie";
 
-        if (playerChoice == "rock" && computerPlay == "paper")
-          return "You Loose! Paper beats Rock";
-        else if (playerChoice == "rock" && computerPlay == "scissors")
-          return "You Win! Rock beats Scissors";
-        else if (playerChoice == "scissors" && computerPlay == "paper")
-          return "You Win! Scissors beats Paper";
-        else if (playerChoice == "scissors" && computerPlay == "rock")
-          return "You Loose! Rock beats Scissors";
-        else if (playerChoice == "paper" && computerPlay == "scissors")
-          return "You Loose! Scissors beats Paper";
-        else if (playerChoice == "paper" && computerPlay == "rock")
-          return "You Win! Paper beats Rock";
+            if (playerChoice == "rock" && computerPlay == "paper")
+              return "You Loose! Paper beats Rock";
+            else if (playerChoice == "rock" && computerPlay == "scissors")
+              return "You Win! Rock beats Scissors";
+            else if (playerChoice == "scissors" && computerPlay == "paper")
+              return "You Win! Scissors beats Paper";
+            else if (playerChoice == "scissors" && computerPlay == "rock")
+              return "You Loose! Rock beats Scissors";
+            else if (playerChoice == "paper" && computerPlay == "scissors")
+              return "You Loose! Scissors beats Paper";
+            else if (playerChoice == "paper" && computerPlay == "rock")
+              return "You Win! Paper beats Rock";
+          }
+          const playerSelection = playerChoice;
+          const computerSelection = computerPlay;
+          console.log(playRound(playerSelection, computerSelection));
+          console.log(playerChoice, computerPlay);
+        }
       }
 
-      console.log(playerChoice, computerPlay);
-      const playerSelection = playerChoice;
-      const computerSelection = computerPlay;
-      console.log(playRound(playerSelection, computerSelection));
+      console.log(game());
     </script>
   </body>
 </html>
